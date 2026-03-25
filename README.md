@@ -1,0 +1,79 @@
+# JavTurbo
+
+Language / 语言: [简体中文](./README.zh-CN.md)
+
+JavTurbo is a desktop app for scanning local JAV video files, fetching metadata, downloading assets, and organizing output for media library tools such as Jellyfin, Emby, Kodi, or Plex.
+
+## Features
+
+- Scan local media folders with extension and file size filters
+- Parse JAV IDs from filenames automatically
+- Concurrent metadata scraping — faster than mdcx, mdcng, and metatube
+- High-resolution cover fetching for DMM/Fanza and MGS, with automatic fallback to standard resolution
+- Duplicate ID detection — skips duplicate movies before scraping to avoid conflicts
+- Configurable folder, filename, and NFO title naming templates
+- Download selected assets: poster, thumb, fanart, trailer, NFO, extrafanart, behind-the-scenes
+- Optional `ffmpeg` conversion for behind-the-scenes MP4 output
+- Post-scrape cleanup: delete files by extension or size, remove empty folders
+- Realtime progress bar and structured runtime logs with per-scrape log files
+- Console page with timeline view, by-movie grouping, level filters, and search
+- Multi-language UI (`en`, `zh-CN`, `zh-TW`)
+
+## Prerequisites
+
+- Optional: `ffmpeg` in PATH — only required for behind-the-scenes MP4 conversion
+
+## Usage
+
+### 1. Settings
+
+Open **Settings** and configure:
+
+- **Media folder** — where your video files are
+- **Success output folder** — where processed videos and assets will be moved
+- **Failed output folder** — where videos that could not be processed will be moved
+- **Download types** — choose which assets to download (poster, thumb, fanart, trailer, NFO, extrafanart, behind-the-scenes)
+- **Naming rules** — folder pattern, filename pattern, NFO title pattern
+- **Concurrency** — number of parallel download and ffmpeg workers
+
+### 2. Scan
+
+Click **Scan** on the main page. JavTurbo will walk your media folder, filter by extension and size, and parse a JAV ID from each filename. Files with an unrecognized ID are shown as failed.
+
+### 3. Scrape
+
+Click **Scrape** to process all unprocessed videos:
+
+- Fetches metadata from the API
+- Moves and renames the video to the success folder
+- Writes NFO
+- Downloads selected assets (poster, fanart, trailer, etc.)
+- Runs post-scrape cleanup if configured
+
+The Scan and Scrape buttons are disabled while an operation is in progress.
+
+### 4. Movie Viewer
+
+Click any movie card to open the viewer:
+
+- Fullcover and metadata shown side by side
+- Description below
+- Trailer (with cover thumbnail and play button), frontcover, and sample images in a grid below
+- Click any image or the trailer to open a fullscreen lightbox — use arrow buttons to navigate
+
+### 5. Console
+
+The Console page shows a live log of all scraping activity. Logs can be filtered by level, searched by keyword, and grouped by movie. Each scrape session also writes a log file to the app log folder (`javturbo-scrape-YYYYMMDD-HHMMSS.log`).
+
+## Asset Naming
+
+For Jellyfin/Emby compatibility:
+
+- No prefix mode:
+  - `poster.jpg`, `thumb.jpg`, `fanart.jpg`, `movie.nfo`, `trailer.mp4`
+- Prefix mode:
+  - `<video filename>-poster.jpg`, `<video filename>-thumb.jpg`, `<video filename>-fanart.jpg`, `<video filename>.nfo`, `<video filename>-trailer.mp4`
+
+## License
+
+No explicit license file is currently included.
