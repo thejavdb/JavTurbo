@@ -8,9 +8,10 @@ JavTurbo is a desktop app for scanning local JAV video files, fetching metadata,
 
 - Scan local media folders with extension and file size filters
 - Parse JAV IDs from filenames automatically
+- Support split videos with grouped processing, one metadata request, and one output folder per title
 - Concurrent metadata scraping — faster than mdcx, mdcng, and metatube
 - High-resolution cover fetching for DMM/Fanza and MGS, with automatic fallback to standard resolution
-- Duplicate ID detection — skips duplicate movies before scraping to avoid conflicts
+- Duplicate ID protection for invalid duplicates that are not named as split parts
 - Configurable folder, filename, and NFO title naming templates
 - Download selected assets: poster, thumb, fanart, trailer, NFO, extrafanart, behind-the-scenes
 - Optional `ffmpeg` conversion for behind-the-scenes MP4 output
@@ -40,6 +41,14 @@ Open **Settings** and configure:
 
 Click **Scan** on the main page. JavTurbo will walk your media folder, filter by extension and size, and parse a JAV ID from each filename. Files with an unrecognized ID are shown as failed.
 
+If a movie is split into multiple files, name the parts with a `-cd#` suffix before the extension:
+
+- `ABC-123-cd1.mp4`
+- `ABC-123-cd2.mp4`
+- `ABC-123-CD3.mkv`
+
+`#` can be `1` to `9`. The suffix is case-insensitive when scanning, but JavTurbo will normalize the final output filename to lowercase such as `-cd1`, `-cd2`.
+
 ### 3. Scrape
 
 Click **Scrape** to process all unprocessed videos:
@@ -49,6 +58,12 @@ Click **Scrape** to process all unprocessed videos:
 - Writes NFO
 - Downloads selected assets (poster, fanart, trailer, etc.)
 - Runs post-scrape cleanup if configured
+
+For split videos, JavTurbo treats all `-cd#` parts with the same ID as one movie group:
+
+- Sends only one metadata request
+- Places all parts in the same output folder
+- Renames each output file with lowercase suffixes like `-cd1`, `-cd2`
 
 The Scan and Scrape buttons are disabled while an operation is in progress.
 
