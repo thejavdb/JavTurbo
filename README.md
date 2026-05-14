@@ -11,6 +11,7 @@ JavTurbo is a desktop app for scanning local JAV video files, fetching metadata,
 - Support split videos with grouped processing, one metadata request, and one output folder per title
 - Concurrent metadata scraping — faster than mdcx, mdcng, and metatube
 - High-resolution cover fetching for DMM/Fanza and MGS, with automatic fallback to standard resolution
+- Manual cover cropping: crop the downloaded fullcover image and overwrite the frontcover when the automatic crop is not accurate
 - Duplicate ID protection for invalid duplicates that are not named as split parts
 - Configurable folder, filename, and NFO title naming templates
 - Download selected assets: poster, thumb, fanart, trailer, NFO, extrafanart, behind-the-scenes
@@ -36,6 +37,8 @@ Open **Settings** and configure:
 - **Download types** — choose which assets to download (poster, thumb, fanart, trailer, NFO, extrafanart, behind-the-scenes)
 - **Naming rules** — folder pattern, filename pattern, NFO title pattern
 - **Concurrency** — number of parallel download and ffmpeg workers
+
+The media folder, success output folder, and failed output folder must be three separate folder trees. Do not set any of them as a parent or child folder of another one, otherwise scanning, moving, or cleanup can affect the wrong files.
 
 ### 2. Scan
 
@@ -75,6 +78,7 @@ Click any movie card to open the viewer:
 - Description below
 - Trailer (with cover thumbnail and play button), frontcover, and sample images in a grid below
 - Click any image or the trailer to open a fullscreen lightbox — use arrow buttons to navigate
+- Use **Crop Cover** to manually crop the downloaded fullcover into the frontcover file. This is useful when the automatic frontcover crop is off and you want to overwrite it with a better crop.
 
 ### 5. Console
 
