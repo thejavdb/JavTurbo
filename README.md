@@ -1,5 +1,7 @@
 # JavTurbo
 
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+1PlPh_PuXFQwMjhh)
+
 Language / 语言: [简体中文](./README.zh-CN.md)
 
 JavTurbo is a desktop app for scanning local JAV video files, fetching metadata, downloading assets, and organizing output for media library tools such as Jellyfin, Emby, Kodi, or Plex.

@@ -1,5 +1,7 @@
 # JavTurbo
 
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+1PlPh_PuXFQwMjhh)
+
 语言 / Language: [English](./README.md)
 
 JavTurbo 是一个桌面应用，用于扫描本地 JAV 视频、抓取元数据、下载资源，并将整理结果输出给 Jellyfin、Emby、Kodi、Plex 等媒体库工具使用。
