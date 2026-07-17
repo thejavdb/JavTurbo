@@ -25,7 +25,24 @@ JavTurbo is a desktop app for scanning local JAV video files, fetching metadata,
 
 ## Prerequisites
 
+- Windows uses the Microsoft Edge WebView2 Runtime. The normal setup installs it automatically when it is missing. Before using the portable edition, install the [Microsoft Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) if it is not already available. Most current Windows 10 and Windows 11 systems already include it.
 - Optional: `ffmpeg` in PATH — only required for behind-the-scenes MP4 conversion
+
+## Editions
+
+### Normal
+
+The normal Windows setup installs JavTurbo and stores settings and logs in the operating system's application-data directories. It also checks for WebView2 and downloads the runtime when needed.
+
+On macOS, the normal DMG contains the standard `JavTurbo.app` bundle and uses the operating system's application-data directories.
+
+### Portable
+
+The portable edition is a separate build. It does not need a marker file and always stores `settings.json` and `logs/` beside `JavTurbo.exe` on Windows or beside `JavTurbo.app` on macOS. They are created automatically on first use and can be moved together with the application.
+
+The directory containing the portable application must be writable. Do not place the portable edition in a protected or read-only location such as `Program Files`, `/Applications`, or a mounted disk image.
+
+The Windows portable ZIP does not install WebView2. If WebView2 is missing, download and install the [Microsoft Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) before starting JavTurbo.
 
 ## Usage
 
@@ -98,3 +115,4 @@ For Jellyfin/Emby compatibility:
 ## License
 
 No explicit license file is currently included.
+
