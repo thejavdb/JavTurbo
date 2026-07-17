@@ -25,7 +25,24 @@ JavTurbo 是一个桌面应用，用于扫描本地 JAV 视频、抓取元数据
 
 ## 环境要求
 
+- Windows 使用 Microsoft Edge WebView2 Runtime。普通安装版会在缺少 WebView2 时自动安装。使用便携版前，如果系统尚未安装 WebView2，请先下载并安装 [Microsoft Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)。目前大多数 Windows 10 和 Windows 11 系统已自带 WebView2。
 - 可选：将 `ffmpeg` 加入 PATH——仅在需要 behind-the-scenes MP4 转换时使用
+
+## 版本说明
+
+### 普通安装版
+
+Windows 普通安装版会安装 JavTurbo，并将设置和日志保存在操作系统的应用数据目录中。安装程序还会检查 WebView2，并在需要时自动下载运行时。
+
+macOS 普通版通过 DMG 提供标准 `JavTurbo.app`，设置和日志保存在操作系统的应用数据目录中。
+
+### 便携版
+
+便携版是独立编译的版本，不需要任何标记文件。它始终将 `settings.json` 和 `logs/` 保存在 Windows 的 `JavTurbo.exe` 旁或 macOS 的 `JavTurbo.app` 旁。首次使用时会自动创建这些文件，之后可以与应用一起移动。
+
+便携版所在目录必须可写。请勿将便携版放在 `Program Files`、`/Applications` 或已挂载的只读磁盘映像等受保护或只读位置。
+
+Windows 便携版不会安装 WebView2。如果系统缺少 WebView2，请在启动 JavTurbo 前下载并安装 [Microsoft Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)。
 
 ## 使用方法
 
