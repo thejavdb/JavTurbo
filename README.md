@@ -1,6 +1,10 @@
 # JavTurbo
 
+Release Note
 [![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+1PlPh_PuXFQwMjhh)
+
+Chatroom
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+RSW4IsgpU6A3OGU5)
 
 Language / 语言: [简体中文](./README.zh-CN.md)
 
