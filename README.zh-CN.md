@@ -1,6 +1,10 @@
 # JavTurbo
 
+发布页
 [![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+1PlPh_PuXFQwMjhh)
+
+聊天室
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Chat-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/+RSW4IsgpU6A3OGU5)
 
 语言 / Language: [English](./README.md)
 
